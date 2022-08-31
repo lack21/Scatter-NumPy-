@@ -1,0 +1,63 @@
+# lear
+# Scatter
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+choice = int(input("\nEnter : "))
+
+
+if choice == 1:
+    # Scatter 1
+    array_1 = np.array([5,7,8,7,2,17,2,9,4,11,12,9,6])
+    array_2 = np.array([99,86,87,88,111,86,103,87,94,78,77,85,86])
+    plt.scatter(array_1, array_2)
+
+
+elif choice == 2:
+    # Scatter 2
+    # Each new Scatter is different color (default)
+    array_3 = np.array([2,2,8,1,15,8,12,9,7,3,11,4,7,14,12])
+    array_4 = np.array([100,105,84,105,90,99,90,95,94,100,79,112,91,80,85])
+    plt.scatter(array_3, array_4)
+
+
+elif choice == 3:
+    # Scatter 3
+    # We can change dots color
+    array_5 = np.array([1, 3, 2, 6, 4, 7, 3, 11, 8, 5])
+    array_6 = np.array([125, 143, 118, 123, 111, 123, 114, 105, 127, 119])
+    plt.scatter(array_5, array_6, color = "red")
+
+
+elif choice == 4:
+    # Scatter 4
+    # We also can change each dots color
+    array_7 = np.array([3, 4, 5, 6])
+    array_8 = np.array([104, 121, 116, 124])
+    colors_7_8 = np.array(["yellow", "blue", "yellow", "blue"])
+    plt.scatter(array_7, array_8, c = colors_7_8)
+
+
+elif choice == 5:
+    # Scatter 5
+    # We can also change the size of the dots
+    # Function 'alpha' make this resized dots half transparent 
+    array_9 = np.array([14, 15, 16])
+    array_10 = np.array([110, 115, 120])
+    sizes_9_10 = np.array([100, 300, 600])
+    plt.scatter(array_9, array_10, s = sizes_9_10, alpha = 0.5)
+
+
+elif choice == 6:
+    # Scatter 6
+    # We also can make this colorful scatter
+    array_11 = np.random.randint(100, size = (100))
+    array_12 = np.random.randint(100, size = (100))
+    colors_11_12 = np.random.randint(100, size = (100))
+    sizes_11_12 = 10 * np.random.randint(100, size = (100))
+    plt.scatter(array_11, array_12, c = colors_11_12, alpha = 0.5, s = sizes_11_12, cmap = "nipy_spectral")
+    plt.colorbar()
+
+
+plt.show()
